@@ -74,6 +74,280 @@ I wanted to use these class attributes as parameters for a function that would t
 
 The issues I was running into with the filtering capability of the website were indicative of a larger hurdle in building a full-stack web application (that is, an application that includes both a front-end and a back-end). Namely, I had to focus on how to make my application receive a user query, retrieve from the back-end of the application the data most relevant to that query, and  then provide the information back to the user in a format consistent with the original query. A common group of tools used to accomplish such tasks is called the “LAMP'' stack, which is an acronym for the Linux operating system, Apache web server, MySQL database, and the scripting language PHP <SITE>. It seemed that my attempts to implement dynamic content to the website were ushering me toward using the LAMP stack, which would add much more functionality than I really needed. This problem was compounded by the fact that the program which would be generating all the underlying data for the site, nwpy, was written in Python. It seemed that working with the data in a web application would be much easier if the web application could be written in Python as well, so I began to look for ways to do that.
 
+### 2.B: Next Steps - Python, Flask, and Heroku
+In moving to Python-based web development, I was motivated by two design principles:
+1. Don’t compromise on any of the functionality goals for the project.
+2. Minimize the amount of extraneous functionality.
+There are two main tools that web developers use when writing in Python: a framework called Django, and a microframework called Flask. Both tools are open source frameworks that aid in the web development process, but Flask is a “microframework” in that it comes with fewer extensions automatically installed <SITE>. Flask seemed like the right tool for my project, because it would allow me to add only the functionality that I really needed and avoid any of the extra tools like user authentication that weren’t really necessary for the project. In addition, I learned about a “platform as a service” called Heroku <SITE> which would allow me to host a Flask-built application for free, and for which there were significant resources online about how to publish a Flask-built application. I decided that the Flask microframework would satisfy my design principles, so I began to learn more about how to collect user-specific data from the front-end and work with that data on the back-end of the Flask-built application.
+
+To work with forms in Flask, I first needed to add a module called “flask_wtf” into my library. This allowed me to define forms for the front-end of the web application as objects, which made the form data easily parsable on the back-end. Using this module, I created a form to collect information from the user a “cart” page regarding the specific nuclear waste data they wanted to study. I knew the requested data would typically include the Evaluation Group (EG), stage of the fuel cycle, waste form (ceramic, glass, etc.), data type (radioactivity, radiotoxicity, etc.), and the category of data (Actinides, specific isotopes, etc.), so I needed to create a database from which specific subsets of data could be accessed for plotting according to the form responses.
+
+For the purpose of the development stage, the database that I used was SQLite, and the database library that I added to my Flask app was called SQLAlchemy. I began by generating and storing data only for the most basic fuel cycle, EG01, for which I had already generated 4 CSV files using nwpy. Loading the data into the database required two steps for each CSV file: creating a Pandas dataframe of each file using the “to_csv” method and then connecting that dataframe to the established database using the “to_sql” method. These two steps enabled me to run a single script to  transfer all the CSV files containing the waste data from my hard drive into a database that could eventually be hosted remotely. Developing the means to transfer files in this simple and efficient way was a critical step in moving the complete version of FCP toward deployment.
+
+With the data successfully stored in my development database, I then wrote code that could retrieve and plot subsets of this data as specified by a form on the front-end of FCP. The form responses for the EG, fuel cycle stage, waste form, and data type could all be parsed such that they only referred to a single table within my database. Each table includes several hundred rows (one for each isotope that might appear in any given waste stream), so to retrieve only the data that was specified in the form I needed a way to search through the table and select only the rows of data that were relevant. I found that this was best accomplished by creating a Pandas dataframe out of the table using the “read_sql_table” method. Then I could use Python commands to parse through the dataframe and create a dictionary of data categories and their associated Pandas series, which I could plot. For the plotting, I turned to the Python library called Bokeh <SITE> because of its interactive features. With forty EGs (some with as many as 10 waste streams) and hundreds of isotopes per waste stream, the plots can become overwhelmingly complex very easily. I wanted to find the right balance between preventing a user from creating an overly-complex plot and allowing them to compare a variety of waste data to see how selecting different options could change the waste profile over time. I decided to allow the user to select a maximum of three total waste streams per plot and a maximum of eight total data categories (individual isotopes, elements, or species) per waste stream.
+
+Once the data for the simplest EG was stored in the development database and able to be made into plots, I scaled-up the database to include the other 39 EGs as well. In doing so, I wanted to “benchmark” the data that a user would see in the plots against a few data “standards” included in the FCES report: radioactivity of spent nuclear fuel (SNF) and high-level waste (HLW) at both 100 years and 100,000 years. I also included the useful benchmarking metric of SNF + HLW mass because it can indicate why other metric data points may be skewed in one direction or another. To perform this benchmarking evaluation, the data points that were generated by nwpy and displayed in FCP were linearly interpolated to obtain the characteristic values at relevant times. Although the data are exponential, a linear interpolation between tightly spaced values provided a good first-order verification of the method.
+
+Table 1 displays the ratio of values provided for three metrics as reported in FCP vs. the FCES report. (A ratio of 1.0 implies  perfect agreement between analyses.) The two analyses give results that are within 5% for almost all EGs. Values for which the percent difference exceeds 5% can be attributed to differences in waste stream processing assumptions between the FCES study and nwpy, as explained in <SITE>. The nomenclature used for each fuel cycle ID code (shown in column 1 of Table 1) is:
+<p>[Evaluation group number].[recycle strategy]–[reactor type(s)]–[fuel type(s)]</p>
+<figcaption style="width:fit-content; margin:auto"><em>Table 1: Benchmarking of waste management metrics as reported in FCP against FCES results</em></figcaption>
+<div class="benchmarking">
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>SNF + HLW</th>
+                <th colspan="2">SNF + HLW Radioactivity</th>
+            </tr>
+            <tr>
+                <th style="text-align: left;">Fuel Cycle ID Code</th>
+                <th>Mass</th>
+                <th>100 y</th>
+                <th>10,000 y</th>
+            </tr>
+        </thead>
+        <tr>
+            <th style="text-align: left;">1.OT–PWR–U</th>
+            <th>0.9998</th>
+            <th>1.007</th>
+            <th>1.0022</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">2.OT–HTGR–U</th>
+            <th>1.004</th>
+            <th>1.010</th>
+            <th>1.003</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">3.OT–HWR–U</th>
+            <th>1.000</th>
+            <th>1.006</th>
+            <th>1.014</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">4.OT–SFR–U</th>
+            <th>0.9989</th>
+            <th>1.008</th>
+            <th>1.003</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">5.OT–HTGR–U/Th</th>
+            <th>1.003</th>
+            <th>1.007</th>
+            <th>1.001</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">6.OT–FFH–Th</th>
+            <th>1.003</th>
+            <th>1.012</th>
+            <th>1.008</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">7.OT–ADS–U</th>
+            <th>1.001</th>
+            <th>1.009</th>
+            <th>1.023</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">8.OT–FFH–Th</th>
+            <th>0.9969</th>
+            <th>1.005</th>
+            <th>0.9798</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">9.LR–SFR–U/TRU</th>
+            <th>0.9976</th>
+            <th>1.013</th>
+            <th>0.9878</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">10.LR–MSR–Th/U3</th>
+            <th class="red_text">1.052</th>
+            <th>1.028</th>
+            <th>1.002</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">11.LR–SFR–U/Th/U3</th>
+            <th>1.020</th>
+            <th class="red_text">1.313</th>
+            <th>0.9832</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">12.LR–HWR–U/Pu</th>
+            <th>1.000</th>
+            <th>1.005</th>
+            <th>1.009</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">13.LR–PWR/PWR–U/Pu</th>
+            <th>1.003</th>
+            <th>1.007</th>
+            <th>1.003</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">14.LR–SFR/PWR–U/Pu</th>
+            <th>0.9991</th>
+            <th>1.010</th>
+            <th>0.9958</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">15.LR–PWR/SFR–U/Pu</th>
+            <th>0.9983</th>
+            <th>1.004</th>
+            <th>0.9974</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">16.LR–PWR/ADS–U/Pu</th>
+            <th>1.014</th>
+            <th>1.009</th>
+            <th>0.9966</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">17.LR–PWR/PWR–U/Th/Pu</th>
+            <th>0.9992</th>
+            <th>1.005</th>
+            <th>0.9962</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">18.LR–PWR/PWR–U/Th/U3</th>
+            <th>1.002</th>
+            <th>1.008</th>
+            <th>0.9971</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">19.CR–HWR–U/Pu</th>
+            <th>0.9880</th>
+            <th>1.010</th>
+            <th>0.9958</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">20.CR–HWR–U/TRU</th>
+            <th>0.9887</th>
+            <th>1.012</th>
+            <th>0.9899</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">21.CR–PWR–U/Pu</th>
+            <th>0.9904</th>
+            <th>1.013</th>
+            <th>0.9943</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">22.CR–PWR–U/TRU</th>
+            <th>0.9712</th>
+            <th>1.012</th>
+            <th>0.9851</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">23.CR–SFR–U/Pu</th>
+            <th>1.007</th>
+            <th>1.009</th>
+            <th>0.9794</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">24.CR–SFR–U/TRU</th>
+            <th>0.9835</th>
+            <th>1.005</th>
+            <th>0.9769</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">25.CR–PWR–U/TRU/Th/U3</th>
+            <th>0.9866</th>
+            <th>1.000</th>
+            <th>0.9571</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">26.CR–MSR–Th/U3/TRU</th>
+            <th>1.016</th>
+            <th class="red_text">1.054</th>
+            <th>1.031</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">27.CR–SFR–U/Th/U3</th>
+            <th>0.9993</th>
+            <th>1.006</th>
+            <th>1.009</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">28.CR–SFR–Th/U3</th>
+            <th>1.002</th>
+            <th>1.005</th>
+            <th>0.9928</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">29.CR–SFR/PWR–U/Pu</th>
+            <th>0.9995</th>
+            <th>1.010</th>
+            <th>0.9912</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">30.CR–SFR/PWR–U/TRU</th>
+            <th>1.011</th>
+            <th>1.011</th>
+            <th>0.9733</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">31.CR–PWR/SFR–U/Pu</th>
+            <th>1.002</th>
+            <th>1.007</th>
+            <th>0.9875</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">32.CR–PWR/SFR–U/TRU</th>
+            <th>0.9996</th>
+            <th>1.011</th>
+            <th>0.9816</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">33.CR–ADS/PWR–U/Pu</th>
+            <th>0.9946</th>
+            <th>1.005</th>
+            <th>0.9779</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">34.CR–ADS/PWR–U/TRU</th>
+            <th>0.9955</th>
+            <th>1.006</th>
+            <th>0.9690</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">35.CR–PWR/ADS–U/Pu</th>
+            <th>1.006</th>
+            <th>1.020</th>
+            <th>0.9741</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">36.CR–PWR/ADS–U/Pu/MA</th>
+            <th>0.9749</th>
+            <th>1.006</th>
+            <th>0.9795</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">37.CR–SFR/PWR–Th/U3</th>
+            <th>1.019</th>
+            <th>1.008</th>
+            <th>0.9790</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">38.CR–SFR/PWR–Th/U3</th>
+            <th>1.025</th>
+            <th>1.008</th>
+            <th>0.9979</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">39.CR–PWR/PWR/ADS–U/TRU/Th/U3</th>
+            <th>0.9826</th>
+            <th>1.019</th>
+            <th>0.9965</th>
+        </tr>
+        <tr>
+            <th style="text-align: left;">40.CR–ADS/PWR–Th/U3</th>
+            <th>1.008</th>
+            <th>1.001</th>
+            <th>0.9727</th>
+        </tr>
+    </table>
+</div>
 ## Introduction
 
 This little guide demonstrate how to turn any [Github](http://github.com) repository with a bunch of [Markdown](https://en.wikipedia.org/wiki/Markdown) files into a simple website using [Github Pages](https://pages.github.com/) and [Jekyll](https://jekyllrb.com/).
