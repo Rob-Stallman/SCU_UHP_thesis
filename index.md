@@ -1,30 +1,30 @@
 ## List of Acronyms
-ADS: Accelerator-driven system
-CR: Continuous recycle
-DF: Discharged fuel
-DOE: Department of Energy
-DU: Depleted uranium
-EG: Evaluation group
-FCES: Fuel cycle evaluation and screening
-FCP: Fuel cycle plotter
-FFH: Fusion-fission hybrid
-HLW: High-level waste
-HTGR: High-temperature gas reactor
-HWR: Heavy water reactor
-LEU: Low enriched uranium
-LR: Limited recycle
-LWR: Light water reactor
-MA: Minor Actinides
-MSR: Molten salt reactor
-NU: Natural uranium
-NWPY: Nuclear waste analysis in python
-OT: Once-through
-PA: Performance assessment
-PWR: Pressurized water reactor
-SFR: Sodium-cooled fast reactor
-SNF: Spent nuclear fuel
-TRU: Transuranics
-UI: User interface
+ADS: Accelerator-driven system <br/><br/>
+CR: Continuous recycle <br/><br/>
+DF: Discharged fuel <br/><br/>
+DOE: Department of Energy <br/><br/>
+DU: Depleted uranium <br/><br/>
+EG: Evaluation group <br/><br/>
+FCES: Fuel cycle evaluation and screening <br/><br/>
+FCP: Fuel cycle plotter <br/><br/>
+FFH: Fusion-fission hybrid <br/><br/>
+HLW: High-level waste <br/><br/>
+HTGR: High-temperature gas reactor <br/><br/>
+HWR: Heavy water reactor <br/><br/>
+LEU: Low enriched uranium <br/><br/>
+LR: Limited recycle <br/><br/>
+LWR: Light water reactor <br/><br/>
+MA: Minor Actinides <br/><br/>
+MSR: Molten salt reactor <br/><br/>
+NU: Natural uranium <br/><br/>
+NWPY: Nuclear waste analysis in python <br/><br/>
+OT: Once-through <br/><br/>
+PA: Performance assessment <br/><br/>
+PWR: Pressurized water reactor <br/><br/>
+SFR: Sodium-cooled fast reactor <br/><br/>
+SNF: Spent nuclear fuel <br/><br/>
+TRU: Transuranics <br/><br/>
+UI: User interface <br/><br/>
 
 ## Section 1: Introduction and Literature Review
 ### 1.A: Context
