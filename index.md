@@ -348,6 +348,9 @@ Table 1 displays the ratio of values provided for three metrics as reported in F
         </tr>
     </table>
 </div>
+
+### 2.C: Final Steps - Deployment
+Based on my benchmarking evaluation, I determined that the data I had been storing locally and working with exclusively in the development database for this project was ready to be moved to a deployment database, which would allow FCP to become publicly available. To host FCP publicly, I used the Heroku and Git command line interfaces (CLIs) to create a Heroku app and connect it to my local development project. At this point, the complete front-end of FCP was publicly accessible. Users from any machine could navigate to the URL associated with my Heroku application and look through the catalog or read the “about” page, but if they tried to create any plots, they would see an error message due to the lack of a populated database connected to the application. To build a deployment-ready database for the application, I first created a local PostgreSQL database where I could transfer all of the data I had stored in my local SQLite database. Once I had ensured that all the data had been properly transferred, I then pushed the PostgreSQL database to Heroku’s cloud-based database service called Heroku Postgres. With this step, FCP became fully-functional on May 6, 2021.
 ## Introduction
 
 This little guide demonstrate how to turn any [Github](http://github.com) repository with a bunch of [Markdown](https://en.wikipedia.org/wiki/Markdown) files into a simple website using [Github Pages](https://pages.github.com/) and [Jekyll](https://jekyllrb.com/).
