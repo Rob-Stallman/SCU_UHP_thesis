@@ -43,7 +43,6 @@ A visualization tool called FCP (short for Fuel Cycle Plotter) has been develope
 
 By virtue of having multiple fuel cycles to study, possible use cases for FCP extend beyond providing input parameters for repository performance assessment. Using the tool, up to three different fuel cycles can be selected at a time for comparison. In the event that a fuel cycle produces multiple waste streams (e.g. an off-gas stream from aqueous separations such as PUREX or a ceramic waste stream from electrochemical separations), the user also has the option to make comparisons between individual streams. For each waste form stream selected, the user has the option to plot the selected waste characteristic for individual isotopes or elements, or select from several different overarching nuclide species (e.g. actinides, fission products, transuranics). The FCP waste stream selection options are shown in Fig. XX. In this way, making comparisons between and among fuel cycles on the basis of waste production becomes a streamlined process, enabling quick and easy analysis and well-informed decision-making.
 
-![](https://i.stack.imgur.com/RJj4x.png)
 ![My image](/assets/IMG_9429.jpeg)
 
 ### 1.C: Project History
