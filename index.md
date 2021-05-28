@@ -51,6 +51,29 @@ SNF: Spent nuclear fuel <br/><br/>
 TRU: Transuranics <br/><br/>
 UI: User interface <br/><br/>
 
+## Section 2: Building Process
+### 2.A: Initial Steps - HTML5, CSS, and JavaScript
+I began by designing the user interface (UI) for FCP using HTML5, CSS and JavaScript. The guiding principle behind the early stages of the building process was that the web application should be intuitive and fun to use. Thus, I modelled the UI to mirror an online-shopping catalog. The idea was that a user could log on, sift through a catalog of fuel cycles, and add to their “cart” the ones they wanted to learn more about. A mock-up of this early-stage design is shown in Figure XX, and the first edition of the webpage is shown in Figure XX.
+
+![Figure 2]()
+<figcaption style="width:fit-content; margin:auto"><em>Figure XX. An initial mock-up of what became the homepage of FCP: a catalog of the forty EGs defined in the FCES study.</em></figcaption>
+
+![Figure 3]()
+<figcaption style="width:fit-content; margin:auto"><em>Figure XX. The first edition of the homepage of FCP written with HTML and CSS. The webpage was purely static at this point because I had not yet introduced any JavaScript.</em></figcaption>
+
+To allow users to sort through the catalog quickly and effectively, I wanted them to be able to filter in or out the fuel cycles that appear in the catalog based on several discriminators. Initially, I attempted to integrate this interactivity into FCP using exclusively JavaScript. The goal was to use “on-click” events in JavaScript to make the items on the catalog page appear or disappear based on the buttons that were clicked in the filter sidebar (see left panel of Fig XX). However, I immediately ran into a problem involving JavaScript function parameters. I assigned several class attributes to the HTML element for each EG in the catalog according to the six discriminating factors that were used in the FCES study <SITE>. For example, since EG01 includes once-through, critical, thermal neutron spectrum reactor designs which burn enriched uranium, the HTML for the EG01 catalog element looks like:
+```
+<li class="mix once_through critical thermal feed_U enrich_yes" style="width:100%">
+    <h3>EG01 Analysis Example <a href="../static/FCES_Appendix_B.pdf#page=90" target="_blank">(Details)</a></h3>
+    <p>Once-through in PWR using uranium fuel</p>
+    {{ compare_form.eg01() }}
+    {{ compare_form.eg01.label }}
+</li>
+```
+I wanted to use these class attributes as parameters for a function that would toggle the visibility of an HTML element based on whether or not the corresponding button in the filter had been selected, e.g., if “Limited-recycle” were selected under “Recycle Strategy,” the HTML element for EG01 should disappear. However, I found that I couldn’t directly pass parameters to the function associated with the “on-click” events in Javascript which listens for a button selection. I worked around this problem by nesting another function that <em>did</em> allow me to include parameters within the event function, but this success was short-lived. I soon realized that JavaScript would not be the most efficient language to use when designing my website’s back-end, or the layer of the website that holds the data to be shared.
+
+The issues I was running into with the filtering capability of the website were indicative of a larger hurdle in building a full-stack web application (that is, an application that includes both a front-end and a back-end). Namely, I had to focus on how to make my application receive a user query, retrieve from the back-end of the application the data most relevant to that query, and  then provide the information back to the user in a format consistent with the original query. A common group of tools used to accomplish such tasks is called the “LAMP'' stack, which is an acronym for the Linux operating system, Apache web server, MySQL database, and the scripting language PHP <SITE>. It seemed that my attempts to implement dynamic content to the website were ushering me toward using the LAMP stack, which would add much more functionality than I really needed. This problem was compounded by the fact that the program which would be generating all the underlying data for the site, nwpy, was written in Python. It seemed that working with the data in a web application would be much easier if the web application could be written in Python as well, so I began to look for ways to do that.
+
 ## Introduction
 
 This little guide demonstrate how to turn any [Github](http://github.com) repository with a bunch of [Markdown](https://en.wikipedia.org/wiki/Markdown) files into a simple website using [Github Pages](https://pages.github.com/) and [Jekyll](https://jekyllrb.com/).
