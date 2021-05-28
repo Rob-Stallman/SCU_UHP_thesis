@@ -16,7 +16,7 @@ A visualization tool called FCP (short for Fuel Cycle Plotter) has been develope
 By virtue of having multiple fuel cycles to study, possible use cases for FCP extend beyond providing input parameters for repository performance assessment. Using the tool, up to three different fuel cycles can be selected at a time for comparison. In the event that a fuel cycle produces multiple waste streams (e.g. an off-gas stream from aqueous separations such as PUREX or a ceramic waste stream from electrochemical separations), the user also has the option to make comparisons between individual streams. For each waste form stream selected, the user has the option to plot the selected waste characteristic for individual isotopes or elements, or select from several different overarching nuclide species (e.g. actinides, fission products, transuranics). The FCP waste stream selection options are shown in Fig. XX. In this way, making comparisons between and among fuel cycles on the basis of waste production becomes a streamlined process, enabling quick and easy analysis and well-informed decision-making.
 
 ![My image](/assets/IMG_9429.jpeg)
-<figcaption style="width:fit-content; margin:auto"><em>The figure [My image] now has a caption.</em></figcaption>
+<figcaption>The figure [My image] now has a caption.</figcaption>
 
 ### 1.C: Project History
 The forty fuel cycles included in FCP are defined in a 2014 U.S. Department of Energy (DOE) report entitled “Nuclear Fuel Cycle Evaluation and Screening” (FCES) <SITE>. The authors of the report attempted to organize 4,398 unique “fuel cycle option groups” into a comprehensive set of “Evaluation Groups” (EGs) according to “all major aspects of a fuel cycle that may affect the content and disposition of all materials” <SITE>. From each Evaluation Group, a representative “Analysis Example” was selected “to perform the reactor physics analyses … to inform on the metric data” <SITE>. As such, the data represented in FCP is specific to the Analysis Example selected for each Evaluation Group. A brief description of each Analysis Example is included in the catalog of this application, along with a link to the corresponding page in Appendix B of the FCES report, where more information is available.
@@ -56,7 +56,7 @@ UI: User interface <br/><br/>
 I began by designing the user interface (UI) for FCP using HTML5, CSS and JavaScript. The guiding principle behind the early stages of the building process was that the web application should be intuitive and fun to use. Thus, I modelled the UI to mirror an online-shopping catalog. The idea was that a user could log on, sift through a catalog of fuel cycles, and add to their “cart” the ones they wanted to learn more about. A mock-up of this early-stage design is shown in Figure XX, and the first edition of the webpage is shown in Figure XX.
 
 ![Figure 2]()
-<figcaption style="width:fit-content; margin:auto"><em>Figure XX. An initial mock-up of what became the homepage of FCP: a catalog of the forty EGs defined in the FCES study.</em></figcaption>
+<figcaption>Figure XX. An initial mock-up of what became the homepage of FCP: a catalog of the forty EGs defined in the FCES study.</figcaption>
 
 ![Figure 3]()
 <figcaption style="width:fit-content; margin:auto"><em>Figure XX. The first edition of the homepage of FCP written with HTML and CSS. The webpage was purely static at this point because I had not yet introduced any JavaScript.</em></figcaption>
@@ -66,8 +66,8 @@ To allow users to sort through the catalog quickly and effectively, I wanted the
 <li class="mix once_through critical thermal feed_U enrich_yes" style="width:100%">
     <h3>EG01 Analysis Example <a href="../static/FCES_Appendix_B.pdf#page=90" target="_blank">(Details)</a></h3>
     <p>Once-through in PWR using uranium fuel</p>
-    {{ compare_form.eg01() }}
-    {{ compare_form.eg01.label }}
+    \{{ compare_form.eg01() }}
+    \{{ compare_form.eg01.label }}
 </li>
 ```
 I wanted to use these class attributes as parameters for a function that would toggle the visibility of an HTML element based on whether or not the corresponding button in the filter had been selected, e.g., if “Limited-recycle” were selected under “Recycle Strategy,” the HTML element for EG01 should disappear. However, I found that I couldn’t directly pass parameters to the function associated with the “on-click” events in Javascript which listens for a button selection. I worked around this problem by nesting another function that <em>did</em> allow me to include parameters within the event function, but this success was short-lived. I soon realized that JavaScript would not be the most efficient language to use when designing my website’s back-end, or the layer of the website that holds the data to be shared.
@@ -78,6 +78,7 @@ The issues I was running into with the filtering capability of the website were 
 In moving to Python-based web development, I was motivated by two design principles:
 1. Don’t compromise on any of the functionality goals for the project.
 2. Minimize the amount of extraneous functionality.
+
 There are two main tools that web developers use when writing in Python: a framework called Django, and a microframework called Flask. Both tools are open source frameworks that aid in the web development process, but Flask is a “microframework” in that it comes with fewer extensions automatically installed <SITE>. Flask seemed like the right tool for my project, because it would allow me to add only the functionality that I really needed and avoid any of the extra tools like user authentication that weren’t really necessary for the project. In addition, I learned about a “platform as a service” called Heroku <SITE> which would allow me to host a Flask-built application for free, and for which there were significant resources online about how to publish a Flask-built application. I decided that the Flask microframework would satisfy my design principles, so I began to learn more about how to collect user-specific data from the front-end and work with that data on the back-end of the Flask-built application.
 
 To work with forms in Flask, I first needed to add a module called “flask_wtf” into my library. This allowed me to define forms for the front-end of the web application as objects, which made the form data easily parsable on the back-end. Using this module, I created a form to collect information from the user a “cart” page regarding the specific nuclear waste data they wanted to study. I knew the requested data would typically include the Evaluation Group (EG), stage of the fuel cycle, waste form (ceramic, glass, etc.), data type (radioactivity, radiotoxicity, etc.), and the category of data (Actinides, specific isotopes, etc.), so I needed to create a database from which specific subsets of data could be accessed for plotting according to the form responses.

@@ -1,0 +1,28 @@
+.captions {
+    width:fit-content;
+    margin:auto;
+    font-style: italic;
+}
+
+div.benchmarking table {
+    border-collapse: collapse;
+    width: fit-content;
+    margin: auto;
+}
+
+div.benchmarking td, div.benchmarking th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+div.benchmarking thead {
+    background-color: #dddddd;
+}
+
+div.benchmarking tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.red_text {
+    color:red
+}
