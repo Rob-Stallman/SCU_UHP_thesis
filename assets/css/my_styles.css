@@ -1,6 +1,8 @@
-#content > img[alt="Figure 3"] {
-    width: -webkit-fill-available;
-    margin: 0em;
+.main-content img[alt="Figure 3"] {
+    width: 100vw;
+    position: relative;
+    left: calc(-50vw + 50%);
+    height: 100px;
 }
 
 figcaption {
