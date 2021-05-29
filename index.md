@@ -1,10 +1,3 @@
-<ol>
-    <li>Section 1: Introduction and Literature Review</li>
-    <li>Section 2: Building Process</li>
-    <li>Section 3: Examples - Use Cases</li>
-    <li>Section 4: Conclusions and Future Work</li>
-    <li>Section 5: References</li>
-</ol>
 * TOC
 {:toc}
 
