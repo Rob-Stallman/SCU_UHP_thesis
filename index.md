@@ -66,6 +66,7 @@ To allow users to sort through the catalog quickly and effectively, I wanted the
 <li class="mix once_through critical thermal feed_U enrich_yes" style="width:100%">
     <h3>EG01 Analysis Example <a href="../static/FCES_Appendix_B.pdf#page=90" target="_blank">(Details)</a></h3>
     <p>Once-through in PWR using uranium fuel</p>
+    Show the *middle asterisk\* with emphasis*
     \{{ compare_form.eg01() }}
     \{{ compare_form.eg01.label }}
 </li>
