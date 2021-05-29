@@ -386,6 +386,7 @@ The EG23 process requires the input of natural uranium (NU), but the uranium doe
 
 | Characteristic | EG01 | EG23 |
 | ---| --- | --- |
+
 | Recycle strategy | once-through | continuous |
 | Irradiation environment | critical | critical |
 | Neutron spectrum | thermal | fast |
