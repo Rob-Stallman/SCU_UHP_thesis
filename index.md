@@ -1,3 +1,13 @@
+<ol>
+    <li>Section 1: Introduction and Literature Review</li>
+    <li>Section 2: Building Process</li>
+    <li>Section 3: Examples - Use Cases</li>
+    <li>Section 4: Conclusions and Future Work</li>
+    <li>Section 5: References</li>
+</ol>
+* TOC
+{:toc}
+
 ## Section 1: Introduction and Literature Review
 ### 1.A: Context
 Commercial nuclear power plants have played a key role in satisfying the United States’ energy demand for over 60 years. As of 2020, nearly 20% of the country’s energy generation was nuclear in origin <SITE>. With 94 reactors at 56 different power plants <SITE>, nuclear power will continue to be an important part of the United States’ energy generation mix for the foreseeable future. This is good in that the electricity produced from nuclear power plants has zero carbon emissions directly associated with it. The ecological destruction wrought by global, human-caused climate change continues to prove that the world cannot continue to rely on carbon-emitting power plants. However, the radioactive waste produced in the process of generating this carbon-free electricity poses a supremely hazardous problem that has yet to be addressed effectively.
