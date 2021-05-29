@@ -1,5 +1,6 @@
-img[alt="Figure 3"] {
+#content > img[alt="Figure 3"] {
     width: -webkit-fill-available;
+    margin: 0em;
 }
 
 figcaption {
