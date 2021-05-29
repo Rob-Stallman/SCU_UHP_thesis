@@ -1,3 +1,7 @@
+img[alt="Figure 3"] {
+    width: -webkit-fill-available;
+}
+
 figcaption {
     font-size: small;
     font-style: italic;
