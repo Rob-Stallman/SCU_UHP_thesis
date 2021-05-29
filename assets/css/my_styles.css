@@ -1,5 +1,7 @@
 figcaption {
     font-size: small;
+    width:fit-content;
+    margin: 0em 2em;
     font-style: italic;
 }
 
