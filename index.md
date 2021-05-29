@@ -385,14 +385,14 @@ The EG23 process requires the input of natural uranium (NU), but the uranium doe
 <figcaption>Table 2. Fuel Cycle Characteristics of EG01 and EG23.</figcaption>
 
 | Characteristic | EG01 | EG23 |
-| ---| --- | --- |
+| :---: | :---: | :---: |
 
-| Recycle strategy | once-through | continuous |
-| Irradiation environment | critical | critical |
-| Neutron spectrum | thermal | fast |
-| Feed element | U | U |
-| Recycled element | n/a | U and Pu |
-| Enrichment | yes | no |
+| Recycle strategy | once-through | continuous 
+| Irradiation environment | critical | critical 
+| Neutron spectrum | thermal | fast 
+| Feed element | U | U 
+| Recycled element | n/a | U and Pu 
+| Enrichment | yes | no 
 
 The ability to use and recycle U and Pu, as well as the fast neutron spectrum associated with EG23 are two characteristics that contribute to the improved performance of this fuel cycle over EG01. Recycling U and Pu provides the benefit of increased natural resource utilization; the recovered elements can be used multiple times before being sent to long-term disposal, thus increasing the burnup of the fuel cycle. Furthermore, the fast spectrum of the SFR should result in increased fission of non-fissile transuranics such as Pu and Am that are normally accumulated in LWRs. A smaller concentration of these hazardous products in the waste stream may result in a stronger safety case for the repository in which it is disposed.
 
