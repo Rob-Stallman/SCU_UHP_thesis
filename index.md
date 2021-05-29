@@ -383,9 +383,7 @@ Reducing long-term radiotoxicity risks is only one reason for removing and repro
 The EG23 process requires the input of natural uranium (NU), but the uranium does not need to be enriched (as it does for EG01). The SFR core consists of a driver and a blanket, each of which gets fed NU. In the driver, the NU becomes part of a U-Pu-Zr ternary metallic fuel which is irradiated to a burnup of 81.5 GW-day/ton. In the blanket, the NU becomes part of a U-Pu binary metallic fuel which is irradiated to 23.5 GW-day/ton. Used fuel is reprocessed to recover Pu and U, which is then recycled into the core <SITE>. This fuel cycle generates electricity at a net thermal efficiency of 40%, with an average burnup of 72.6 GW-day/ton. Several factors contribute to the improved performance of this fuel cycle over EG01; a list of relevant characteristics for the EG01 and EG23 fuel cycles is shown in Table 2.
 
 <figcaption>Table 2. Fuel Cycle Characteristics of EG01 and EG23.</figcaption>
-
 | Characteristic | EG01 | EG23 |
-
 | :---: | :---: | :---: |
 | Recycle strategy | once-through | continuous 
 | Irradiation environment | critical | critical 
