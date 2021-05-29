@@ -59,16 +59,15 @@ I began by designing the user interface (UI) for FCP using HTML5, CSS and JavaSc
 <figcaption>Figure XX. An initial mock-up of what became the homepage of FCP: a catalog of the forty EGs defined in the FCES study.</figcaption>
 
 ![Figure 3]()
-<figcaption style="width:fit-content; margin:auto"><em>Figure XX. The first edition of the homepage of FCP written with HTML and CSS. The webpage was purely static at this point because I had not yet introduced any JavaScript.</em></figcaption>
+<figcaption>Figure XX. The first edition of the homepage of FCP written with HTML and CSS. The webpage was purely static at this point because I had not yet introduced any JavaScript.</figcaption>
 
 To allow users to sort through the catalog quickly and effectively, I wanted them to be able to filter in or out the fuel cycles that appear in the catalog based on several discriminators. Initially, I attempted to integrate this interactivity into FCP using exclusively JavaScript. The goal was to use “on-click” events in JavaScript to make the items on the catalog page appear or disappear based on the buttons that were clicked in the filter sidebar (see left panel of Fig XX). However, I immediately ran into a problem involving JavaScript function parameters. I assigned several class attributes to the HTML element for each EG in the catalog according to the six discriminating factors that were used in the FCES study <SITE>. For example, since EG01 includes once-through, critical, thermal neutron spectrum reactor designs which burn enriched uranium, the HTML for the EG01 catalog element looks like:
-```
+```json
 <li class="mix once_through critical thermal feed_U enrich_yes" style="width:100%">
     <h3>EG01 Analysis Example <a href="../static/FCES_Appendix_B.pdf#page=90" target="_blank">(Details)</a></h3>
     <p>Once-through in PWR using uranium fuel</p>
-    Show the *middle asterisk\* with emphasis*
-    \{{ compare_form.eg01() }}
-    \{{ compare_form.eg01.label }}
+    {{ compare_form.eg01() }}
+    {{ compare_form.eg01.label }}
 </li>
 ```
 I wanted to use these class attributes as parameters for a function that would toggle the visibility of an HTML element based on whether or not the corresponding button in the filter had been selected, e.g., if “Limited-recycle” were selected under “Recycle Strategy,” the HTML element for EG01 should disappear. However, I found that I couldn’t directly pass parameters to the function associated with the “on-click” events in Javascript which listens for a button selection. I worked around this problem by nesting another function that <em>did</em> allow me to include parameters within the event function, but this success was short-lived. I soon realized that JavaScript would not be the most efficient language to use when designing my website’s back-end, or the layer of the website that holds the data to be shared.
@@ -92,7 +91,7 @@ Once the data for the simplest EG was stored in the development database and abl
 
 Table 1 displays the ratio of values provided for three metrics as reported in FCP vs. the FCES report. (A ratio of 1.0 implies  perfect agreement between analyses.) The two analyses give results that are within 5% for almost all EGs. Values for which the percent difference exceeds 5% can be attributed to differences in waste stream processing assumptions between the FCES study and nwpy, as explained in <SITE>. The nomenclature used for each fuel cycle ID code (shown in column 1 of Table 1) is:
 <p>[Evaluation group number].[recycle strategy]–[reactor type(s)]–[fuel type(s)]</p>
-<figcaption style="width:fit-content; margin:auto"><em>Table 1: Benchmarking of waste management metrics as reported in FCP against FCES results</em></figcaption>
+<figcaption>Table 1: Benchmarking of waste management metrics as reported in FCP against FCES results.</figcaption>
 <div class="benchmarking">
     <table>
         <thead>
