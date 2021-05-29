@@ -15,7 +15,7 @@ A visualization tool called FCP (short for Fuel Cycle Plotter) has been develope
 
 By virtue of having multiple fuel cycles to study, possible use cases for FCP extend beyond providing input parameters for repository performance assessment. Using the tool, up to three different fuel cycles can be selected at a time for comparison. In the event that a fuel cycle produces multiple waste streams (e.g. an off-gas stream from aqueous separations such as PUREX or a ceramic waste stream from electrochemical separations), the user also has the option to make comparisons between individual streams. For each waste form stream selected, the user has the option to plot the selected waste characteristic for individual isotopes or elements, or select from several different overarching nuclide species (e.g. actinides, fission products, transuranics). The FCP waste stream selection options are shown in Fig. XX. In this way, making comparisons between and among fuel cycles on the basis of waste production becomes a streamlined process, enabling quick and easy analysis and well-informed decision-making.
 
-![Figure 1](/assets/cart_form.png)
+![Figure 1](/assets/images/cart_form.png)
 <figcaption>Figure 1. Screen capture of a form in FCP which allows the user to select the waste streams and waste characteristics that they would like to see plotted. Two evaluation groups (EGs), EG01 and EG23, have been selected for comparison here. An EG is a collection of fuel cycle options with similar fundamental physics characteristics, e.g., a thermal reactor with a critical irradiation environment. Each EG has an associated Analysis Example (AE) which further specifies fuel type(s) and reactor technology(s) so that quantitative data could be generated to inform further analysis. The AE for EG01 only has one waste stream, so in this instance the stream called “Stage 1 SNF” is equivalent to the fuel cycle total. The AE for EG23 has multiple waste streams due to the reprocessing methods used in this EG. In this case, the user may select one or more waste streams at a time for analysis. There are four characteristics of the waste stream data available for plotting: radiotoxicity, radioactivity, heat generation, and waste composition. Finally, there are a number of different ways to select the specific nuclides which will be displayed in the FCP-generated plot, from as specific as a single isotope to as broad as the sum of all products in the waste stream.</figcaption>
 
 ### 1.C: Project History
@@ -55,10 +55,10 @@ UI: User interface <br/><br/>
 ### 2.A: Initial Steps - HTML5, CSS, and JavaScript
 I began by designing the user interface (UI) for FCP using HTML5, CSS and JavaScript. The guiding principle behind the early stages of the building process was that the web application should be intuitive and fun to use. Thus, I modelled the UI to mirror an online-shopping catalog. The idea was that a user could log on, sift through a catalog of fuel cycles, and add to their “cart” the ones they wanted to learn more about. A mock-up of this early-stage design is shown in Figure XX, and the first edition of the webpage is shown in Figure XX.
 
-![Figure 2](/assets/mockup.png)
+![Figure 2](/assets/images/mockup.png)
 <figcaption>Figure 2. An initial mock-up of what became the homepage of FCP: a catalog of the forty EGs defined in the FCES study.</figcaption>
 
-![Figure 3](/assets/first_edition.png)
+![Figure 3](/assets/images/first_edition.png)
 <figcaption>Figure 3. The first edition of the homepage of FCP written with HTML and CSS. The webpage was purely static at this point because I had not yet introduced any JavaScript.</figcaption>
 
 To allow users to sort through the catalog quickly and effectively, I wanted them to be able to filter in or out the fuel cycles that appear in the catalog based on several discriminators. Initially, I attempted to integrate this interactivity into FCP using exclusively JavaScript. The goal was to use “on-click” events in JavaScript to make the items on the catalog page appear or disappear based on the buttons that were clicked in the filter sidebar (see left panel of Fig XX). However, I immediately ran into a problem involving JavaScript function parameters. I assigned several class attributes to the HTML element for each EG in the catalog according to the six discriminating factors that were used in the FCES study <SITE>. For example, since EG01 includes once-through, critical, thermal neutron spectrum reactor designs which burn enriched uranium, the HTML for the EG01 catalog element looks like:
@@ -358,12 +358,12 @@ The fuel cycle plotter FCP can be used to study the individual waste characteris
 
 A particularly important fuel cycle to understand is the commonly used once-through, enriched uranium, pressurized water reactor (PWR) cycle which is the standard for commercial nuclear power generation in the United States. This cycle is referred to in the FCES as EG01. The different stages of this fuel cycle are shown in Figure XX.
 
-![Figure 4](/assets/eg01_schematic)
+![Figure 4](/assets/images/eg01_schematic)
 <figcaption>Figure 4. A schematic diagram of the fuel cycle defined in the FCES study as EGO1: natural uranium is enriched, irradiated in a pressurized water reactor, and sent to disposal. This fuel cycle is the standard for commercial nuclear power generation in the United States.</figcaption>
 
 In the EG01 process, natural uranium (NU) is enriched and used to make low enriched uranium (LEU) oxide fuel, which is then irradiated in a PWR and used to generate energy at a net thermal efficiency of 33% and an average discharge burnup (a measure of how much energy is extracted per metric ton of heavy metal) of 50 GW-days/ton <SITE>. There is no recycling of nuclear materials in this fuel cycle; everything gets sent to storage to cool and will eventually need to be sent to a long-term repository in the form of depleted uranium (DU) or discharged fuel (DF). The total radiotoxicity over time from EG01 is shown in Figure XX.
 
-![Figure 5](/assets/eg01_tox.png)
+![Figure 5](/assets/images/eg01_tox.png)
 <figcaption>Figure XX. A plot produced by FCP to show the radiotoxicity of the spent nuclear fuel produced by EG01, all of which is sent to a storage and disposal facility without any reprocessing.</figcaption>
 
 The plot in Figure XX accurately reflects the fact that once the short-lived fission products have had a few half-lives worth of time to decay, they are replaced by elements in the actinides group as the main contributor to radiotoxicity. Although radiotoxicity has historically been used as a metric for risk, many scholars today recognize the inaccuracy of such a direct association <SITE, SITE>. In reality, the long-term risk is highest for Tc-99 and I-129 (also shown in Figure XX) due to “their solubility and greater release rate from the waste solid, their long half lives, and their weak sorption on rock” <SITE>.
