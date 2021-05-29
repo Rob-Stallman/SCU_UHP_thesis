@@ -58,7 +58,7 @@ I began by designing the user interface (UI) for FCP using HTML5, CSS and JavaSc
 ![Figure 2](/assets/images/mockup.png)
 <figcaption>Figure 2. An initial mock-up of what became the homepage of FCP: a catalog of the forty EGs defined in the FCES study.</figcaption>
 
-![Figure 3](/assets/images/first_edition.png)
+<span style="width:100%">![Figure 3](/assets/images/first_edition.png)</span>
 <figcaption>Figure 3. The first edition of the homepage of FCP written with HTML and CSS. The webpage was purely static at this point because I had not yet introduced any JavaScript.</figcaption>
 
 To allow users to sort through the catalog quickly and effectively, I wanted them to be able to filter in or out the fuel cycles that appear in the catalog based on several discriminators. Initially, I attempted to integrate this interactivity into FCP using exclusively JavaScript. The goal was to use “on-click” events in JavaScript to make the items on the catalog page appear or disappear based on the buttons that were clicked in the filter sidebar (see left panel of Fig XX). However, I immediately ran into a problem involving JavaScript function parameters. I assigned several class attributes to the HTML element for each EG in the catalog according to the six discriminating factors that were used in the FCES study <SITE>. For example, since EG01 includes once-through, critical, thermal neutron spectrum reactor designs which burn enriched uranium, the HTML for the EG01 catalog element looks like:
