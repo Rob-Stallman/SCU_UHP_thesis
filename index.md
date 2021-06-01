@@ -3,15 +3,15 @@
 
 ## Section 1: Introduction and Literature Review
 ### 1.A: Context
-Commercial nuclear power plants have played a key role in satisfying the United States’ energy demand for over 60 years. As of 2020, nearly 20% of the country’s energy generation was nuclear in origin <SITE>. With 94 reactors at 56 different power plants <SITE>, nuclear power will continue to be an important part of the United States’ energy generation mix for the foreseeable future. This is good in that the electricity produced from nuclear power plants has zero carbon emissions directly associated with it. The ecological destruction wrought by global, human-caused climate change continues to prove that the world cannot continue to rely on carbon-emitting power plants. However, the radioactive waste produced in the process of generating this carbon-free electricity poses a supremely hazardous problem that has yet to be addressed effectively.
+Commercial nuclear power plants have played a key role in satisfying the United States’ energy demand for over 60 years. As of 2020, nearly 20% of the country’s energy generation was nuclear in origin [6]. With 94 reactors at 56 different power plants [7], nuclear power will continue to be an important part of the United States’ energy generation mix for the foreseeable future. This is good in that the electricity produced from nuclear power plants has zero carbon emissions directly associated with it. The ecological destruction wrought by global, human-caused climate change continues to prove that the world cannot continue to rely on carbon-emitting power plants. However, the radioactive waste produced in the process of generating this carbon-free electricity poses a supremely hazardous problem that has yet to be addressed effectively.
 
-Nuclear waste is a uniquely problematic type of waste in that it not only poses an immediate safety risk, but will continue to do so for millennia after its generation. Storage methods are typically broken down into two categories: short-term and long-term. Short-term storage entails the prolonged submersion of nuclear fuel rods immediately after they are removed from the reactor for anywhere from 5 years to multiple decades, followed by the encasement of the rods in layers of cement and steel. Long-term storage requires isolation of the waste for millenia, which suggests a host of challenges. No country in the world currently has an operational long-term storage plan<SITE>.
+Nuclear waste is a uniquely problematic type of waste in that it not only poses an immediate safety risk, but will continue to do so for millennia after its generation. Storage methods are typically broken down into two categories: short-term and long-term. Short-term storage entails the prolonged submersion of nuclear fuel rods immediately after they are removed from the reactor for anywhere from 5 years to multiple decades, followed by the encasement of the rods in layers of cement and steel. Long-term storage requires isolation of the waste for millenia, which suggests a host of challenges. No country in the world currently has an operational long-term storage plan [8].
 
-The prevailing idea for a long-term storage plan involves burying robustly engineered capsules containing high level waste deep underground in a structure typically referred to as a repository <SITE>. These repositories are meant to sequester even the most highly toxic wastes for thousands of years, by which time the radioactive decay of the dangerous isotopes will have lowered the overall toxicity of the waste to a similar level as might be found naturally. To design such a structure that might effectively achieve this goal would be a significant engineering achievement, but the physical containment mechanism is only one piece of this very important puzzle.
+The prevailing idea for a long-term storage plan involves burying robustly engineered capsules containing high level waste deep underground in a structure typically referred to as a repository [4]. These repositories are meant to sequester even the most highly toxic wastes for thousands of years, by which time the radioactive decay of the dangerous isotopes will have lowered the overall toxicity of the waste to a similar level as might be found naturally. To design such a structure that might effectively achieve this goal would be a significant engineering achievement, but the physical containment mechanism is only one piece of this very important puzzle.
 
 A key factor in designing an effective long-term repository is the proper selection of the repository location. Rigorous study of the geologic conditions of a potential repository site is critical to ensure that, in the event of waste capsule degradation over time or due to seismic activity, the stored nuclear waste will not transport to the surface via mechanisms such as sorption in appreciable amounts. Transportation to the surface represents a significant threat to human and non-human wellbeing alike, as either might unwittingly make use of contaminated water in one way or another. The process for evaluating a repository location in such a manner is referred to as a performance assessment (PA). As one might imagine, detailed nuclear waste characteristic data are key input parameters for accurate PAs.
 
-As such, nearly all previous PAs have considered repositories designed to dispose of waste from the current once-through, uranium-powered light-water reactor (LWR) fuel cycle <SITE>. Future PAs may have to consider wastes from different types of advanced fuel cycles for which the reactor design(s), recycling schemes, and waste forms may substantially alter the waste management and disposal requirements. Thus, understanding and comparing waste characteristics is critical for developing a comprehensive waste management strategy.
+As such, nearly all previous PAs have considered repositories designed to dispose of waste from the current once-through, uranium-powered light-water reactor (LWR) fuel cycle [3]. Future PAs may have to consider wastes from different types of advanced fuel cycles for which the reactor design(s), recycling schemes, and waste forms may substantially alter the waste management and disposal requirements. Thus, understanding and comparing waste characteristics is critical for developing a comprehensive waste management strategy.
 
 ### 1.B: Scope
 A visualization tool called FCP (short for Fuel Cycle Plotter) has been developed in order to make waste characteristic data from a variety of fuel cycles more readily accessible to researchers, policy makers, and the general public. A primary function of this new tool is to generate time-dependent plots of key nuclear waste characteristics including radioactivity profiles, waste composition, and more. The tool includes data for 40 different fuel cycles <SITE> at various stages of development, including the LWR fuel cycle currently used in commercial nuclear power generation in the United States.
@@ -406,3 +406,39 @@ Figure XX shows radiotoxicity plotted against time ranging from five years to 10
 The online tool developed for this thesis, FCP (or Fuel Cycle Plotter), enables a straightforward method for analyzing the nuclear waste profile of several important fuel cycles.  By allowing a high degree of customizability within the plotting feature of FCP, one can quickly conduct a general study of any nuclear fuel cycle included in the <em>2014 Department of Energy Fuel Cycle Evaluation and Screening Report</em>, which claimed to have organized 4,398 unique “fuel cycle option groups” according to “all major aspects of a fuel cycle that may affect the content and disposition of all materials” <SITE>. A general study of this kind, though an important step in the analysis of a fuel cycle’s waste characteristics, is just one part of the greater process of planning for long-term nuclear waste storage. FCP also represents a novel approach toward making important quantitative comparisons between advanced fuel cycles. Such analysis is critical in the development of a long-term nuclear waste storage and management strategy in the United States. Our National strategy must take into account the waste characteristics of the currently-used fuel cycle as well as advanced fuel cycles that might be used in the near future. The publicity of FCP as a web application will hopefully allow for wide-spread access to and engagement with this information.
 
 ## Section 5: References
+[1] R. Wigeland et al. <em>Nuclear Fuel Cycle Evaluation and Screening - Final Report</em>.
+Tech. rep. INL/EXT-14-31465. Idaho National Laboratories, 2014. [URL](https://fuelcycleevaluation.inl.gov/SitePages/Home.aspx)
+
+[2] R. Wigeland et. al. <em>Appendix B - Nuclear Fuel Cycle Evaluation and Screening</em>.
+Tech. rep. INL/EXT-14-31465. Idaho National Laboratory, 2014. [URL](https://fuelcycleevaluation.inl.gov/SitePages/Home.aspx)
+
+[3] M. Atz. “Methodologies for the evaluation of nuclear waste management strategies and applications to advanced fuel cycles”. PhD thesis. University of California, Berkeley, 2019. [URL](https://search.proquest.com/docview/2386304498?pq-origsite=gscholar&fromopenview=true)
+
+[4]W. Miller et. al. “The issue of radioactive waste disposal”. In: <em>Geological Disposal of Radioactive Wastes and Natural Analogues, Vol. 2</em>. 2000. 
+
+[5] B. T. Rearden and M. A. Jessee, eds. SCALE Code System, Version 6.2.2.
+ORNL/TM-2005/39. Oak Ridge, TN: Oak Ridge National Laboratory, 2017. [URL](https://www.ornl.gov/scale)
+
+[6] Energy Information Administration. <em>Short-term Energy Outlook</em>. Mar. 2021. [URL](https://www.eia.gov/outlooks/steo/report/electricity.php)
+
+[7] Energy Information Administration. <em>Nuclear Explained, U.S. Nuclear Industry</em>. Apr. 2021. [URL](https://www.eia.gov/energyexplained/nuclear/us-nuclear-industry.php)
+
+[8] Blue Ribbon Commission on America’s Nuclear Future. <em>Report to the Secretary of Energy</em>. Jan. 2012. [URL](https://www.energy.gov/sites/prod/files/2013/04/f0/brc_finalreport_jan2012.pdf)
+
+[9] T. H. Pigford. “Actinide Burning and Waste Disposal". In: <em>MIT International
+Conference on the Next Generation of Nuclear Power Technology</em>. UCB-NE-4176. Oct. 1990.
+
+[10] J. Kessler et al. ““Radiotoxicity Index": An Inappropriate Discriminator for
+Advanced Fuel Cycle Technology Selection". In: <em>Proceedings of the Waste Man-
+agement Symposium</em>. 12276. 2012.
+
+[11] Heroku. <em>Heroku Postgres</em>. [URL](https://www.heroku.com/postgres)
+
+[12] The Pandas Development Team. <em>pandas-dev/pandas: Pandas 1.0.3 (Version v1.0.3)</em>. Zenodo. Mar. 2020. [URL](https://doi.org/10.5281/zenodo.3509134)
+
+[13] M. Grinberg. <em>Flask Web Development: Developing Web Applicaitons with Python</em>. O’Reilly Media, Inc. 2018. [URL](https://flask.palletsprojects.com/en/2.0.x/)
+
+[14] Bokeh Development Team. <em>Bokeh: Python Library for Interactive Visualization</em>. 2020. [URL](https://docs.bokeh.org/en/latest/index.html)
+
+[15] Django Development Team. <em>Django: The Web Framework for Perfectionists with Deadlines</em>. 2021. [URL](https://www.djangoproject.com/start/overview/)
+
