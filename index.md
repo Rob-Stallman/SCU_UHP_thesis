@@ -1,5 +1,6 @@
 * TOC
 {:toc}
+## Acknowledgements
 
 ## Section 1: Introduction and Literature Review
 ### 1.A: Context
