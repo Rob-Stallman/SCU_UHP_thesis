@@ -15,10 +15,13 @@ figcaption {
     border: 3px solid black;
 }
 
-div.benchmarking table {
-    border-collapse: collapse;
+table {
     width: fit-content;
     margin: auto;
+}
+
+div.benchmarking table {
+    border-collapse: collapse;
 }
 
 div.benchmarking td, div.benchmarking th {
