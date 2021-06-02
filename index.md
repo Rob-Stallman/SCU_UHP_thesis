@@ -29,32 +29,32 @@ The forty fuel cycles included in `FCP` are defined in a 2014 U.S. Department of
 The data underlying `FCP` is generated using a software package called “Nuclear Waste Analysis in Python” (`nwpy`, pronounced “nu-pie") that was developed “to characterize waste streams using FCES data including mass balances, discharged fuel composition(s), and details about fuel cycle technologies such as reactor type and reprocessing method” [\[3\]](#section-5-references). In order to generate this data, `nwpy` interfaces with the ORIGEN-S and OPUS modules from the SCALE code suite developed by Oak Ridge National Lab [\[5\]](#section-5-references). `FCP` enables easy visualization of the data produced by the `nwpy` package, which was generated locally during the course of the development of `FCP` and is now stored in a Postgres database hosted on the Heroku platform [\[11\]](#section-5-references). `FCP` manages the data using the pandas library [\[12\]](#section-5-references) for Python and displays it via a front end built using the Flask micro web framework [\[13\]](#section-5-references) and the Bokeh library [\[14\]](#section-5-references) for Python.
 
 ### 1.D: List of Acronyms
-ADS: Accelerator-driven system <br/><br/>
-CR: Continuous recycle <br/><br/>
-DF: Discharged fuel <br/><br/>
-DOE: Department of Energy <br/><br/>
-DU: Depleted uranium <br/><br/>
-EG: Evaluation group <br/><br/>
-FCES: Fuel cycle evaluation and screening <br/><br/>
-`FCP`: Fuel cycle plotter <br/><br/>
-FFH: Fusion-fission hybrid <br/><br/>
-HLW: High-level waste <br/><br/>
-HTGR: High-temperature gas reactor <br/><br/>
-HWR: Heavy water reactor <br/><br/>
-LEU: Low enriched uranium <br/><br/>
-LR: Limited recycle <br/><br/>
-LWR: Light water reactor <br/><br/>
-MA: Minor Actinides <br/><br/>
-MSR: Molten salt reactor <br/><br/>
-NU: Natural uranium <br/><br/>
-`nwpy`: Nuclear waste analysis in python <br/><br/>
-OT: Once-through <br/><br/>
-PA: Performance assessment <br/><br/>
-PWR: Pressurized water reactor <br/><br/>
-SFR: Sodium-cooled fast reactor <br/><br/>
-SNF: Spent nuclear fuel <br/><br/>
-TRU: Transuranics <br/><br/>
-UI: User interface <br/><br/>
+ADS: Accelerator-driven system <br/>
+CR: Continuous recycle <br/>
+DF: Discharged fuel <br/>
+DOE: Department of Energy <br/>
+DU: Depleted uranium <br/>
+EG: Evaluation group <br/>
+FCES: Fuel cycle evaluation and screening <br/>
+`FCP`: Fuel cycle plotter <br/>
+FFH: Fusion-fission hybrid <br/>
+HLW: High-level waste <br/>
+HTGR: High-temperature gas reactor <br/>
+HWR: Heavy water reactor <br/>
+LEU: Low enriched uranium <br/>
+LR: Limited recycle <br/>
+LWR: Light water reactor <br/>
+MA: Minor Actinides <br/>
+MSR: Molten salt reactor <br/>
+NU: Natural uranium <br/>
+`nwpy`: Nuclear waste analysis in python <br/>
+OT: Once-through <br/>
+PA: Performance assessment <br/>
+PWR: Pressurized water reactor <br/>
+SFR: Sodium-cooled fast reactor <br/>
+SNF: Spent nuclear fuel <br/>
+TRU: Transuranics <br/>
+UI: User interface <br/>
 
 ## Section 2: Building Process
 ### 2.A: Initial Steps - HTML5, CSS, and JavaScript
