@@ -101,7 +101,7 @@ Once the data for the simplest EG was stored in the development database and abl
 
 Table 1 displays the ratio of values provided for three metrics as reported in `FCP` vs. the FCES report. (A ratio of 1.0 implies  perfect agreement between analyses.) The two analyses give results that are within 5% for almost all EGs. Values for which the percent difference exceeds 5% can be attributed to differences in waste stream processing assumptions between the FCES study and `nwpy`, as explained in [\[3\]](#section-5-references). The nomenclature used for each fuel cycle ID code (shown in column 1 of Table 1) is:
 <p>[Evaluation group number].[recycle strategy]–[reactor type(s)]–[fuel type(s)]</p>
-<figcaption>Table 1: Benchmarking of waste management metrics as reported in `FCP` against FCES results.</figcaption>
+<figcaption>Table 1: Benchmarking of waste management metrics as reported in <code>FCP</code> against FCES results.</figcaption>
 <div class="benchmarking">
     <table>
         <thead>
