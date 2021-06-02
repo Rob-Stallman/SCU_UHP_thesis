@@ -11,6 +11,9 @@ figcaption {
     font-style:italic;
 }
 
+figcaption code {
+    font-style: normal;
+}
 .diagram {
     border: 3px solid black;
 }
