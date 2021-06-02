@@ -15,7 +15,7 @@ figcaption {
     border: 3px solid black;
 }
 
-table {
+.main-content table {
     width: fit-content !important;
     margin: auto;
 }
