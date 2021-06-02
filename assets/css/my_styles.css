@@ -1,6 +1,7 @@
 img + em {
     font-size: smaller;
     text-align: center;
+    margin: 0em 3em;
 }
 
 div.benchmarking table {
