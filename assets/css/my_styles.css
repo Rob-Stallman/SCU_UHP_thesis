@@ -20,6 +20,10 @@ figcaption {
     margin: auto;
 }
 
+#1d-list-of-acronyms p {
+    margin-left: 2em;
+}
+
 div.benchmarking table {
     border-collapse: collapse;
 }
