@@ -67,7 +67,7 @@ I began by designing the user interface (UI) for `FCP` using HTML5, CSS and Java
 </figure>
 
 <figure>
-    <img src="./assets/images/first_edition.png" alt="Figure 3"/>
+    <img src="./assets/images/first_edition.png" alt="Figure 3" style="width:100% !important;"/>
     <figcaption>Figure 3. The first edition of the homepage of <code>FCP</code> written with HTML and CSS. The webpage was purely static at this point because I had not yet introduced any JavaScript.</figcaption>
 </figure>
 
