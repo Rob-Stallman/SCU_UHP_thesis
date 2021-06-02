@@ -49,7 +49,7 @@ LWR: Light water reactor <br/>
 MA: Minor Actinides <br/>
 MSR: Molten salt reactor <br/>
 NU: Natural uranium <br/>
-`nwpy`: Nuclear waste analysis in python <br/>
+<code>nwpy</code>: Nuclear waste analysis in python <br/>
 OT: Once-through <br/>
 PA: Performance assessment <br/>
 PWR: Pressurized water reactor <br/>
