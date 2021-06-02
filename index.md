@@ -363,7 +363,7 @@ The fuel cycle plotter `FCP` can be used to study the individual waste character
 
 A particularly important fuel cycle to understand is the commonly used once-through, enriched uranium, pressurized water reactor (PWR) cycle which is the standard for commercial nuclear power generation in the United States. This cycle is referred to in the FCES as EG01. The different stages of this fuel cycle are shown in Figure 4.
 
-![Figure 4](/assets/images/eg01_schematic.png){style="align-content:center; border:3px solid black"}
+![Figure 4](/assets/images/eg01_schematic.png){: style="align-content:center; border:3px solid black"}
 <br>
 *Figure 4. A schematic diagram of the fuel cycle defined in the FCES study as EGO1: natural uranium is enriched, irradiated in a pressurized water reactor, and sent to disposal. This fuel cycle is the standard for commercial nuclear power generation in the United States.*
 
