@@ -38,7 +38,7 @@ DOE: Department of Energy <br/>
 DU: Depleted uranium <br/>
 EG: Evaluation group <br/>
 FCES: Fuel cycle evaluation and screening <br/>
-`FCP`: Fuel cycle plotter <br/>
+<code>FCP</code>: Fuel cycle plotter <br/>
 FFH: Fusion-fission hybrid <br/>
 HLW: High-level waste <br/>
 HTGR: High-temperature gas reactor <br/>
