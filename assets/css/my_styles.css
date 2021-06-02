@@ -1,6 +1,6 @@
-figcaption {
+img + em {
     font-size: small;
-    font-style: italic;
+    text-align: center;
 }
 
 div.benchmarking table {
