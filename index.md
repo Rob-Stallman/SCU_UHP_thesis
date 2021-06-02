@@ -65,7 +65,7 @@ I began by designing the user interface (UI) for `FCP` using HTML5, CSS and Java
 
 <figure>
     <img src="./assets/images/mockup.png" alt="Figure 2"/>
-    <figcaption>Figure 2. An initial mock-up of what became the homepage of `FCP`: a catalog of the forty EGs defined in the FCES study.</figcaption>
+    <figcaption>Figure 2. An initial mock-up of what became the homepage of <code>FCP</code>: a catalog of the forty EGs defined in the FCES study.</figcaption>
 </figure>
 
 <figure style="margin:0em">
