@@ -30,6 +30,7 @@ The forty fuel cycles included in `FCP` are defined in a 2014 U.S. Department of
 The data underlying `FCP` is generated using a software package called “Nuclear Waste Analysis in Python” (`nwpy`, pronounced “nu-pie") that was developed “to characterize waste streams using FCES data including mass balances, discharged fuel composition(s), and details about fuel cycle technologies such as reactor type and reprocessing method” [\[3\]](#section-5-references). In order to generate this data, `nwpy` interfaces with the ORIGEN-S and OPUS modules from the SCALE code suite developed by Oak Ridge National Lab [\[5\]](#section-5-references). `FCP` enables easy visualization of the data produced by the `nwpy` package, which was generated locally during the course of the development of `FCP` and is now stored in a Postgres database hosted on the Heroku platform [\[11\]](#section-5-references). `FCP` manages the data using the pandas library [\[12\]](#section-5-references) for Python and displays it via a front end built using the Flask micro web framework [\[13\]](#section-5-references) and the Bokeh library [\[14\]](#section-5-references) for Python.
 
 ### 1.D: List of Acronyms
+<div style="margin-left:2em;">
 ADS: Accelerator-driven system <br/>
 CR: Continuous recycle <br/>
 DF: Discharged fuel <br/>
@@ -56,6 +57,7 @@ SFR: Sodium-cooled fast reactor <br/>
 SNF: Spent nuclear fuel <br/>
 TRU: Transuranics <br/>
 UI: User interface <br/>
+</div>
 
 ## Section 2: Building Process
 ### 2.A: Initial Steps - HTML5, CSS, and JavaScript
