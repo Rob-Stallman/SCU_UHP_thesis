@@ -1,4 +1,4 @@
-figure img {
+figure img, figure a img {
     display: block; 
     margin-left: auto; 
     margin-right: auto; 
