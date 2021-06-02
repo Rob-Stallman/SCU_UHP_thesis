@@ -5,10 +5,14 @@ figure img {
     width: fit-content;
 }
 
-figure figcaption {
+figcaption {
     text-align:center; 
     font-size:smaller; 
     font-style:italic;
+}
+
+.diagram {
+    border: 3px solid black;
 }
 
 div.benchmarking table {
