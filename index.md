@@ -46,7 +46,7 @@ HWR: Heavy water reactor <br/>
 LEU: Low enriched uranium <br/>
 LR: Limited recycle <br/>
 LWR: Light water reactor <br/>
-MA: Minor Actinides <br/>
+MA: Minor actinides <br/>
 MSR: Molten salt reactor <br/>
 NU: Natural uranium <br/>
 <code>nwpy</code>: Nuclear Waste Analysis in Python <br/>
