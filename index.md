@@ -15,7 +15,7 @@ A key factor in designing an effective long-term repository is the proper select
 As such, nearly all previous PAs have considered repositories designed to dispose of waste from the current once-through, uranium-powered light-water reactor (LWR) fuel cycle [\[3\]](#section-5-references). Future PAs may have to consider wastes from different types of advanced fuel cycles for which the reactor design(s), recycling schemes, and waste forms may substantially alter the waste management and disposal requirements. Thus, understanding and comparing waste characteristics is critical for developing a comprehensive waste management strategy.
 
 ### 1.B: Scope
-A visualization tool called `FCP` (short for Fuel Cycle Plotter) has been developed in order to make waste characteristic data from a variety of fuel cycles more readily accessible to researchers, policy makers, and the general public. This new online tool is available at <a href="http://www.fuelcycleplotter.com" target="blank">www.fuelcycleplotter.com</a>. A primary function of this new tool is to generate time-dependent plots of key nuclear waste characteristics including radioactivity profiles, waste composition, and more. The tool includes data for 40 different fuel cycles [\[1\]](#section-5-references) at various stages of development, including the LWR fuel cycle currently used in commercial nuclear power generation in the United States.
+A visualization tool called `FCP` (short for Fuel Cycle Plotter) has been developed in order to make waste characteristic data from a variety of fuel cycles more readily accessible to researchers, policy makers, and the general public. This new online tool is available at <a href="http://www.fuelcycleplotter.com" target="_blank">www.fuelcycleplotter.com</a>. A primary function of this new tool is to generate time-dependent plots of key nuclear waste characteristics including radioactivity profiles, waste composition, and more. The tool includes data for 40 different fuel cycles [\[1\]](#section-5-references) at various stages of development, including the LWR fuel cycle currently used in commercial nuclear power generation in the United States.
 
 By virtue of having multiple fuel cycles to study, possible use cases for `FCP` extend beyond providing input parameters for repository performance assessment. Using the tool, up to three different fuel cycles can be selected at a time for comparison. In the event that a fuel cycle produces multiple waste streams (e.g. an off-gas stream from aqueous separations such as PUREX or a ceramic waste stream from electrochemical separations), the user also has the option to make comparisons between individual streams. For each waste form stream selected, the user has the option to plot the selected waste characteristic for individual isotopes or elements, or select from several different overarching nuclide species (e.g. actinides, fission products, transuranics). The `FCP` waste stream selection options are shown in Figure 1. In this way, making comparisons between and among fuel cycles on the basis of waste production becomes a streamlined process, enabling quick and easy analysis and well-informed decision-making.
 
@@ -69,7 +69,7 @@ I began by designing the user interface (UI) for `FCP` using HTML5, CSS and Java
 </figure>
 
 <figure style="margin:0em">
-    <a href="./assets/images/first_edition.png" target="blank"><img src="./assets/images/first_edition.png" alt="Figure 3"/></a>
+    <a href="./assets/images/first_edition.png" target="_blank"><img src="./assets/images/first_edition.png" alt="Figure 3"/></a>
     <figcaption style="margin:0em 40px; padding: 0.2rem;">Figure 3. The first edition of the homepage of <code>FCP</code> written with HTML and CSS. The webpage was purely static at this point because I had not yet introduced any JavaScript.</figcaption>
 </figure>
 
@@ -366,7 +366,7 @@ Table 1 displays the ratio of values provided for three metrics as reported in `
 Based on my benchmarking evaluation, I determined that the data I had been storing locally and working with exclusively in the development database for this project was ready to be moved to a deployment database, which would allow `FCP` to become publicly available. To host `FCP` publicly, I used the Heroku and Git command line interfaces (CLIs) to create a Heroku app and connect it to my local development project. At this point, the complete front-end of `FCP` was publicly accessible. Users from any machine could navigate to the URL associated with my Heroku application and look through the catalog or read the “about” page, but if they tried to create any plots, they would see an error message due to the lack of a populated database connected to the application. To build a deployment-ready database for the application, I first created a local PostgreSQL database where I could transfer all of the data I had stored in my local SQLite database. Once I had ensured that all the data had been properly transferred, I then pushed the PostgreSQL database to Heroku’s cloud-based database service called Heroku Postgres. With this step, `FCP` became fully-functional on May 6, 2021.
 
 ## Section 3: Examples - Use Cases
-The Fuel Cycle Plotter `FCP` can be used to study the individual waste characteristics of any radioactive waste stream generated by any fuel cycle that was studied in the FCES. It can also be used to make comparisons between different waste streams of a given fuel cycle, or even between waste streams from different fuel cycles. To follow along with the following examples, please visit <a href="http://www.fuelcycleplotter.com" target="blank">www.fuelcycleplotter.com</a>.
+The Fuel Cycle Plotter `FCP` can be used to study the individual waste characteristics of any radioactive waste stream generated by any fuel cycle that was studied in the FCES. It can also be used to make comparisons between different waste streams of a given fuel cycle, or even between waste streams from different fuel cycles. To follow along with the following examples, please visit <a href="http://www.fuelcycleplotter.com" target="_blank">www.fuelcycleplotter.com</a>.
 
 A particularly important fuel cycle to understand is the commonly used once-through, enriched uranium, pressurized water reactor (PWR) cycle which is the standard for commercial nuclear power generation in the United States. This cycle is referred to in the FCES as EG01. The different stages of this fuel cycle are shown in Figure 4.
 
@@ -459,23 +459,23 @@ There are several opportunities for building upon the work presented in this the
 
 ## Section 5: References
 [1] R. Wigeland et al. <em>Nuclear Fuel Cycle Evaluation and Screening - Final Report</em>.
-Tech. rep. INL/EXT-14-31465. Idaho National Laboratories, 2014. [URL](https://fuelcycleevaluation.inl.gov/SitePages/Home.aspx)
+Tech. rep. INL/EXT-14-31465. Idaho National Laboratories, 2014. <a href="https://fuelcycleevaluation.inl.gov/SitePages/Home.aspx" target="_blank">URL</a>
 
 [2] R. Wigeland et. al. <em>Appendix B - Nuclear Fuel Cycle Evaluation and Screening</em>.
-Tech. rep. INL/EXT-14-31465. Idaho National Laboratory, 2014. [URL](https://fuelcycleevaluation.inl.gov/SitePages/Home.aspx)
+Tech. rep. INL/EXT-14-31465. Idaho National Laboratory, 2014. <a href="https://fuelcycleevaluation.inl.gov/SitePages/Home.aspx" target="_blank">URL</a>
 
-[3] M. Atz. “Methodologies for the evaluation of nuclear waste management strategies and applications to advanced fuel cycles”. PhD thesis. University of California, Berkeley, 2019. [URL](https://search.proquest.com/docview/2386304498?pq-origsite=gscholar&fromopenview=true)
+[3] M. Atz. “Methodologies for the evaluation of nuclear waste management strategies and applications to advanced fuel cycles”. PhD thesis. University of California, Berkeley, 2019. <a href="https://search.proquest.com/docview/2386304498?pq-origsite=gscholar&fromopenview=true" target="_blank">URL</a>
 
 [4] W. Miller et. al. “The issue of radioactive waste disposal”. In: <em>Geological Disposal of Radioactive Wastes and Natural Analogues, Vol. 2</em>. 2000. 
 
 [5] B. T. Rearden and M. A. Jessee, eds. SCALE Code System, Version 6.2.2.
-ORNL/TM-2005/39. Oak Ridge, TN: Oak Ridge National Laboratory, 2017. [URL](https://www.ornl.gov/scale)
+ORNL/TM-2005/39. Oak Ridge, TN: Oak Ridge National Laboratory, 2017. <a href="https://www.ornl.gov/scale" target="_blank">URL</a>
 
-[6] Energy Information Administration. <em>Short-term Energy Outlook</em>. Mar. 2021. [URL](https://www.eia.gov/outlooks/steo/report/electricity.php)
+[6] Energy Information Administration. <em>Short-term Energy Outlook</em>. Mar. 2021. <a href="https://www.eia.gov/outlooks/steo/report/electricity.php" target="_blank">URL</a>
 
-[7] Energy Information Administration. <em>Nuclear Explained, U.S. Nuclear Industry</em>. Apr. 2021. [URL](https://www.eia.gov/energyexplained/nuclear/us-nuclear-industry.php)
+[7] Energy Information Administration. <em>Nuclear Explained, U.S. Nuclear Industry</em>. Apr. 2021. <a href="https://www.eia.gov/energyexplained/nuclear/us-nuclear-industry.php" target="_blank">URL</a>
 
-[8] Blue Ribbon Commission on America’s Nuclear Future. <em>Report to the Secretary of Energy</em>. Jan. 2012. [URL](https://www.energy.gov/sites/prod/files/2013/04/f0/brc_finalreport_jan2012.pdf)
+[8] Blue Ribbon Commission on America’s Nuclear Future. <em>Report to the Secretary of Energy</em>. Jan. 2012. <a href="https://www.energy.gov/sites/prod/files/2013/04/f0/brc_finalreport_jan2012.pdf" target="_blank">URL</a>
 
 [9] T. H. Pigford. “Actinide Burning and Waste Disposal". In: <em>MIT International
 Conference on the Next Generation of Nuclear Power Technology</em>. UCB-NE-4176. Oct. 1990.
@@ -484,14 +484,14 @@ Conference on the Next Generation of Nuclear Power Technology</em>. UCB-NE-4176.
 Advanced Fuel Cycle Technology Selection". In: <em>Proceedings of the Waste Man-
 agement Symposium</em>. 12276. 2012.
 
-[11] Heroku. <em>Heroku Postgres</em>. [URL](https://www.heroku.com/postgres)
+[11] Heroku. <em>Heroku Postgres</em>. <a href="https://www.heroku.com/postgres" target="_blank">URL</a>
 
-[12] The Pandas Development Team. <em>pandas-dev/pandas: Pandas 1.0.3 (Version v1.0.3)</em>. Zenodo. Mar. 2020. [URL](https://doi.org/10.5281/zenodo.3509134)
+[12] The Pandas Development Team. <em>pandas-dev/pandas: Pandas 1.0.3 (Version v1.0.3)</em>. Zenodo. Mar. 2020. <a href="https://doi.org/10.5281/zenodo.3509134" target="_blank">URL</a>
 
-[13] M. Grinberg. <em>Flask Web Development: Developing Web Applicaitons with Python</em>. O’Reilly Media, Inc. 2018. [URL](https://flask.palletsprojects.com/en/2.0.x/)
+[13] M. Grinberg. <em>Flask Web Development: Developing Web Applicaitons with Python</em>. O’Reilly Media, Inc. 2018. <a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">URL</a>
 
-[14] Bokeh Development Team. <em>Bokeh: Python Library for Interactive Visualization</em>. 2020. [URL](https://docs.bokeh.org/en/latest/index.html)
+[14] Bokeh Development Team. <em>Bokeh: Python Library for Interactive Visualization</em>. 2020. <a href="https://docs.bokeh.org/en/latest/index.html" target="_blank">URL</a>
 
-[15] IBM. <em>LAMP Stack</em>. May 2019. [URL](https://www.ibm.com/cloud/learn/lamp-stack-explained)
+[15] IBM. <em>LAMP Stack</em>. May 2019. <a href="https://www.ibm.com/cloud/learn/lamp-stack-explained" target="_blank">URL</a>
 
-[16] Django Development Team. <em>Django: The Web Framework for Perfectionists with Deadlines</em>. 2021. [URL](https://www.djangoproject.com/start/overview/)
+[16] Django Development Team. <em>Django: The Web Framework for Perfectionists with Deadlines</em>. 2021. <a href="https://www.djangoproject.com/start/overview/" target="_blank">URL</a>
