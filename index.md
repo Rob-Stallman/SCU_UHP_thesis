@@ -1,6 +1,17 @@
 * TOC
 {:toc}
 ## Acknowledgements
+I am a firm believer that any endeavor is only as good as the network of people that supports it, but I have found this to be particularly true in the case of this project. Despite the circumstances brought on by the COVID-19 pandemic, I have been extremely lucky to receive the support, mentorship, and friendship of a number of remarkable people. This project would not be the same without each and every one of you. 
+
+I have so many reasons to thank Dr. Milos Atz that I am afraid I won't be able to list them all here. To be able to step into this project has meant the world to me, and I am truly grateful to you for trusting me to build upon the fantastic work that you completed for your thesis at U.C. Berkeley. Your patience and support throughout the development process has been amazing. Thank you for your mentorship and advice, and for setting an example of a healthy work/life balance. I am happy to call you both a mentor and a friend.
+
+I have been extremely fortunate to work with Dr. Betty Young throughout my time at Santa Clara University. My involvement with this project would be quite literally non-existent without your support; thank you for introducing me to Dr. Atz. The amount of time and effort that you put in to see your students succeed and thrive is unparalleled, and I am deeply grateful to have had the opportunity to learn from you these past four years. I cannot thank you enough for the support and advice that you have provided me in the seemingly innumerable times that I've turned to you with a problem. 
+
+Thank you to Dr. Heather Turner for your advice and feedback throughout the course of writing this thesis. The generosity that you displayed in your willingness to join this project prior to knowing me as a student shows what a great professor you truly are. 
+
+To my friends and family (who I feel are often one in the same), thank you for bringing so much joy to my life. When the demands of my academic life feels the greatest, I know I can always turn to you for fun distractions and to help me find a renewed sense of excitement about my work. 
+
+Finally, I owe a debt of gratitude to the Johnson Scholars Program at Santa Clara Univeristy. I cannot imagine my life without the wonderful people that I've met during my time here, and I simply would not have been able to attend this school without the support of this program.
 
 ## List of Acronyms
 <div style="margin-left:2em;">
